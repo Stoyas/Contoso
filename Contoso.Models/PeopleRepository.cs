@@ -111,11 +111,11 @@ namespace Contoso.Data
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "spGetPeopleById";
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;   // second version
             cmd.Connection = con;
             cmd.Parameters.AddWithValue("@id", id);
 
-            SqlDataReader rdr = cmd.ExecuteReader();
+            SqlDataReader rdr = cmd.ExecuteReader();  
             pl.ID = Convert.ToInt32(rdr["id"]);
             pl.LastName = rdr["LASTNAME"].ToString();
             pl.FirstName = rdr["FIRSTNAME"].ToString();
